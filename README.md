@@ -1,3 +1,3 @@
 # Web-Project
 ## 3shan t3ml update....
-### e3ml git clone el awel , b3den add your file , b3den git add all , bden commit and push 
+### e3ml git clone el awel , b3den add your file , b3den git add * , bden commit and push 
