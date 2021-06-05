@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Trial1_sytle.css">
+    </head>
+    <body>
+        <center>
+        <div id="REQUEST">
+            <form onsubmit="getName();" id="login_form" method="POST">
+                <label for="roles">Choose your role:</label>
+                <select id="roles" name="roles">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <p>Username: <input type="text" id="username"></p>
+                <p>Password: <input type="password" id="password"></p>
+                <p><input type="submit"></p>
+            </form>
+        </div>
+        </center>
+        <script src="Trial1_validation.js"></script>
+    </body>
+</html>
