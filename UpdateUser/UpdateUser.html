@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Update User</title>
+	<link rel="stylesheet" type="text/css" href="UpdateUser.css">
+	<script type="text/javascript" src="UpdateUser.js"></script>
+</head>
+<body>
+	<!--
+	Username
+	password
+	phone number
+	email address
+-->
+	<p>Update User</p>
+<div>
+	<form class="form-style-9">
+		<ul>
+			<li>
+				<input type="text" name="field1" id="field1" class="field-style field-split align-left" placeholder="Username" />
+				<input type="password" name="field2" id="field2" class="field-style field-split align-right" placeholder="Password" />
+
+			</li>
+			<li>
+				<input type="password" name="field3" id="field3" class="field-style field-split align-left" placeholder="Confirm password" />
+				<input type="phone" name="field4" class="field-style field-split align-right" placeholder="Phone" />
+			</li>
+			<li>
+				<input type="email" name="field3" class="field-style field-full align-none" placeholder="Email" />
+			</li>
+			<li>
+				<input type="submit" value="Save" id="submitbutton" onclick = "checkForm()"/>
+			</li>
+		</ul>
+	</form>
+</div>
+</body>
+</html>
