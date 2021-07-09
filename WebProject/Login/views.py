@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 #from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm,UserUpdateForm
 
 # Create your views here.
 def main(request):
@@ -29,3 +29,15 @@ def logout(request):
 
 def test(request):
     return render(request,'Login/test.html')
+
+def updateuser(request):
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Your account has been updated')
+            return redirect('Logged-in')
+    else:
+        form = UserRegisterForm(instance=request.user)
+
+    return render(request, 'Login/UpdateUser.html', {'form': form})
