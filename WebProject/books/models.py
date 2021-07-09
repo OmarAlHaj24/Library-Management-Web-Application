@@ -1,12 +1,30 @@
-import datetime
-
+from django.contrib.auth.models import User
 from django.db import models
-from django.utils.timezone import timezone
+from django.utils import timezone
 # Create your models here.
-class books(models.Model):
+
+
+class book(models.Model):
     bookname = models.CharField(max_length=50)
-    ISBN = models.CharField(max_length=50)
+    ISBN = models.CharField(max_length=50,primary_key=True)
     author = models.CharField(max_length=50)
-    published_year = models.DateTimeField(auto_now_add=False,auto_now=False)
+    PublishDate = models.DateTimeField(auto_now_add=False,auto_now=False)
     def __str__(self):
         return self.bookname
+
+
+def tenDays():
+    return timezone.now() + timezone.timedelta(days=10)
+
+class Booking(models.Model):
+    bookedBy = models.ForeignKey(User,on_delete=models.CASCADE)
+    bookedBook= models.ForeignKey(book,on_delete=models.CASCADE)
+    borrowingPeriod=models.DateField(default=tenDays)
+    class Meta:
+        unique_together = (
+            ('bookedBy', 'bookedBook'),
+        )
+
+    def __str__(self):
+        return str(self.bookedBy)+" booked "+str(self.bookedBook)
+
