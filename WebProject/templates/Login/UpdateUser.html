@@ -4,14 +4,12 @@
 <html>
     <head>
         <title>
-            Register
+            Update profile
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
     </head>
     <body>
-        <center>
-
         <div class="content-section" style="background-color:#EEEEEE;opacity: 69% " >
         <form method="POST" style="opacity: 100%; background-color: #334257;">
             {% csrf_token %}
@@ -20,18 +18,12 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-outline-info" type="submit">Update</button>
             </div>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
-            </small>
-        </div>
     </div>
             <a style="white-space: nowrap" href="http://127.0.0.1:8000/"><button>Go Back</button> </a>
         </div>
-        </center>
         <script src="{% static 'Login/app.js' %}"></script>
     </body>
 </html>
