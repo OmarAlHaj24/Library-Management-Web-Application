@@ -27,5 +27,9 @@ urlpatterns = [
     path('', include('Login.urls')),
     path('lib/', book_views.libirary, name='libirary'),
     path('lib/<str:ISBN>/', book_views.onebk, name='onebk'),
+    path('borrow/', book_views.borrow, name='borrow'),
+    path('edit/<str:pk>/', book_views.edit, name='edit'),
+    path('delete/<str:pk>/', book_views.delete, name='delete'),
+    path('bookings/<str:pk>/', book_views.bookings, name='bookings'),
 
 ]
