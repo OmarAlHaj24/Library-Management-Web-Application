@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-class book(models.Model):
+class Book(models.Model):
     bookname = models.CharField(max_length=50)
     ISBN = models.CharField(max_length=50,primary_key=True)
     author = models.CharField(max_length=50)
@@ -18,7 +18,7 @@ def tenDays():
 
 class Booking(models.Model):
     bookedBy = models.ForeignKey(User,on_delete=models.CASCADE)
-    bookedBook= models.ForeignKey(book,on_delete=models.CASCADE)
+    bookedBook= models.ForeignKey(Book,on_delete=models.CASCADE)
     borrowingPeriod=models.DateField(default=tenDays)
     class Meta:
         unique_together = (

@@ -1,0 +1,35 @@
+{% load crispy_forms_filters %}
+{% load static %}
+<!DOCTYPE HTML>
+<head>
+    <title>
+        {{ Book.bookname }}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <center>
+        <h1 style="padding-top: 25px; ">
+            Nice Choice..
+        </h1>
+    </center>
+    <div>
+        <article class="media content-section">
+          <div class="media-body" style="background-color: white;opacity: 69%">
+            <div class="article-metadata">
+              <p class="mr-2" style="color: #2C4373">{{ book.author }}
+                  <small class="text-muted"> published on {{ book.PublishDate }}</small></p>
+
+            </div>
+            <h2 style="color: #17445E">{{ book.bookname }}</h2>
+          </div>
+        </article>
+   </div>
+<center>
+    <a href="/logout">
+    <button class="btn btn-outline-info">Log Out</button>
+    </a>
+</center>
+</body>

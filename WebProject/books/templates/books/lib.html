@@ -1,0 +1,50 @@
+{% load crispy_forms_filters %}
+{% load static %}
+<!DOCTYPE HTML>
+<head>
+    <title>
+        libirary
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <center>
+        <h1 style="padding-top: 25px; ">
+            Our Available Books..
+        </h1>
+    </center>
+    <div class="row">
+         <div class="col">
+            <div style="background-color: black ; opacity: 80%;color: black;padding: 0px">
+                <center>
+                <h2 style="color: #03506F">Search a Specific book</h2>
+                </center>
+                <form method="get" class="form-inline">
+                    {{searchFilter.form|crispy}}
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   <div>
+    {% for book in Books %}
+        <article class="media content-section">
+          <div class="media-body" style="background-color: white;opacity: 69%">
+            <div class="article-metadata">
+              <p class="mr-2" style="color: #2C4373">{{ book.author }}
+                  <small class="text-muted"> published on {{ book.PublishDate }}</small></p>
+
+            </div>
+            <h2><a class="article-title" href="/lib/{{ book.ISBN }}">{{ book.bookname }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+   </div>
+<center>
+    <a href="/logout">
+    <button class="btn btn-outline-info">Log Out</button>
+    </a>
+</center>
+</body>
