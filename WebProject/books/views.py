@@ -45,9 +45,9 @@ def borrow(request):
 @login_required(login_url='/login')
 def edit(request, pk):
     borrowed = Booking.objects.get(id=pk)
-    form = BorrowForm()
+    form = BorrowForm(instance=borrowed)
     if request.method == 'POST':
-        form = BorrowForm(request.POST, instance=borrowed)
+        form = BorrowForm(request.POST,)
         if form.is_valid():
             form.save()
             return redirect('/lib')
