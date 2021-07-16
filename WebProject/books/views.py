@@ -65,4 +65,6 @@ def delete(request, pk):
     return render(request, 'books/edit.html', context)
 
 def about(request):
-    return render(request,'books/about.html')
+    username=request.user.username
+    context={'username' : username}
+    return render(request,'books/about.html',context)
