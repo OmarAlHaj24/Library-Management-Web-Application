@@ -1,2 +1,2 @@
-django_crispy_forms
+django-crispy-forms
 django_filter

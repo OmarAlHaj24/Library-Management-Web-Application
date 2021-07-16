@@ -7,9 +7,32 @@
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/navbar.css' %}">
 
 </head>
 <body>
+<ul>
+    <li>
+         <a href="/bookings/{{ username }}">
+            Your Bookings
+    </a>
+    </li>
+    <li>
+        <a href="/about">
+            About us
+        </a>
+    </li>
+    <li>
+         <a href="/update">
+            Update Profile
+    </a>
+    </li>
+    <li>
+    <a href="/logout">
+        Log Out
+    </a>
+    </li>
+</ul>
     <center>
         <h1 style="padding-top: 25px; ">
             Our Available Books..
@@ -44,7 +67,7 @@
    </div>
 <center>
     <a href="/bookings/{{ username }}">
-    <button class="btn btn-outline-info">Borrowed Books</button>
+    <button class="btn btn-outline-info " style="text-decoration: none ; margin-right: 20px ;">Your Books </button>
     </a>
     <a href="/logout">
     <button class="btn btn-outline-info">Log Out</button>

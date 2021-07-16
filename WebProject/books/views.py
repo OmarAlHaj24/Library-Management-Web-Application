@@ -28,7 +28,7 @@ def onebk(request, ISBN):
 def bookings(request, pk):
 
     un = User.objects.get(username=pk)
-    Books = Booking.objects.filter(bookedBy__username__contains=un)
+    Books = Booking.objects.filter(bookedBy__username__exact=un)
     context = {"Bookings": Books, 'username': un}
     return render(request, 'books/bookings.html', context)
 
@@ -63,3 +63,6 @@ def delete(request, pk):
 
     context = {'Booking': booking}
     return render(request, 'books/edit.html', context)
+
+def about(request):
+    return render(request,'books/about.html')

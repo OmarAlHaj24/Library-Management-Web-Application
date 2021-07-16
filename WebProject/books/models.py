@@ -26,10 +26,10 @@ class Booking(models.Model):
     borrowingPeriod = models.DateField(default=tenDays)
     id = models.IntegerField(primary_key=True)
 
-    # class Meta:
-    #     unique_together = (
-    #         ('bookedBy', 'bookedBook'),
-    #     )
+    class Meta:
+        unique_together = (
+            ('bookedBy', 'bookedBook'),
+        )
 
     def __str__(self):
         return str(self.bookedBy) + " booked " + str(self.bookedBook)

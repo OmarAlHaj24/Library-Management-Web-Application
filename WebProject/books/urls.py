@@ -11,5 +11,5 @@ urlpatterns = [
     path('borrow/', views.borrow, name='borrow'),
     path('edit/<int:pk>/', views.edit, name='edit'),
     path('delete/<int:pk>/', views.delete, name='delete'),
-
+    path('about/',views.about,name='about'),
 ]

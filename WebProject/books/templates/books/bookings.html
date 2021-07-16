@@ -7,12 +7,35 @@
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/navbar.css' %}">
 
 </head>
 <body>
+<ul>
+        <li>
+        <a href="/lib">
+            Library Page
+        </a>
+    </li>
+    <li>
+        <a href="/about">
+            About us
+        </a>
+    </li>
+    <li>
+         <a href="/update">
+            Update Profile
+    </a>
+    </li>
+    <li>
+    <a href="/logout">
+        Log Out
+    </a>
+    </li>
+</ul>
     <center>
         <h1 style="padding-top: 25px; ">
-            Our Available Books..
+            Your Booked Books..
         </h1>
     </center>
     {% for booking in Bookings %}
@@ -21,6 +44,9 @@
             <div class="article-metadata">
               <p class="mr-2" style="color: #2C4373">{{ booking.bookedBook.author }}
                   <small class="text-muted"> published on {{ booking.bookedBook.PublishDate }}</small></p>
+                <p>
+                    <small class="text-muted">Booking ID {{ booking.id }}</small>
+                </p>
 
             </div>
             <h2><a class="article-title" href="/edit/{{ booking.id }}">{{ booking.bookedBook.bookname }}</a></h2>
@@ -29,8 +55,8 @@
     {% endfor %}
    </div>
 <center>
-    <a href="/logout">
-    <button class="btn btn-outline-info">Log Out</button>
+       <a href="/lib">
+    <button class="btn btn-outline-info">Go Back</button>
     </a>
 </center>
 </body>

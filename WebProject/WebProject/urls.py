@@ -31,5 +31,6 @@ urlpatterns = [
     path('edit/<str:pk>/', book_views.edit, name='edit'),
     path('delete/<str:pk>/', book_views.delete, name='delete'),
     path('bookings/<str:pk>/', book_views.bookings, name='bookings'),
+    path('about/', book_views.about, name='about'),
 
 ]

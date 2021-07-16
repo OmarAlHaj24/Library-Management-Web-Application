@@ -1,0 +1,54 @@
+{% load crispy_forms_filters %}
+{% load static %}
+<!DOCTYPE HTML>
+<head>
+    <title>
+        About Us
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/navbar.css' %}">
+</head>
+<body>
+<ul>
+    <li>
+        <a href="/lib">
+            Main Library Page
+        </a>
+    </li>
+    <li>
+         <a href="/bookings/{{ username }}">
+            Your Bookings
+    </a>
+    </li>
+    <li>
+         <a href="/">
+            Home Page
+    </a>
+    </li>
+    <li>
+         <a href="/update">
+            Update Profile
+    </a>
+    </li>
+
+    <li>
+    <a href="/logout">
+        Log Out
+    </a>
+    </li>
+</ul>
+    <div class="media-body" style="background-color: white;opacity: 89%">
+        <p>This is the Library Web Project for Course IS231</p>
+        <p>Students Who Worked on The Project</p>
+            <span style="color:#301B3F">
+            <p>Omar Atef Mohamed Yassin (Team Leader) &emsp;  20190356</p>
+            <p>Omar Khaled Mohy      &emsp;          20190353</p>
+            <p>Omar Khaled Abd Al Motaal   &emsp;    20190351</p>
+            <p>Mostafa Mahmoud Anwar Morsy  &emsp;   20190544</p>
+            <p>Joeseph Diaa Saied   &emsp;           20190155</p>
+            <p>Nedal Adham Ahmed Ezz-Eldin &emsp;    20190585</p>
+            </span>
+    </div>
+
+</body>

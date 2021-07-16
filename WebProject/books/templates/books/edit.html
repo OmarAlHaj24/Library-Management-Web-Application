@@ -7,12 +7,42 @@
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'Login/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/navbar.css' %}">
 
 </head>
 <body>
+<ul>
+        <li>
+        <a href="/lib">
+            Library Page
+        </a>
+    </li>
+
+        <li>
+        <a href="/bookings/{{ booking.bookedBy }}">
+            Your Bookings
+        </a>
+    </li>
+    <li>
+        <a href="/about">
+            About us
+        </a>
+    </li>
+    <li>
+         <a href="/update">
+            Update Profile
+    </a>
+    </li>
+    <li>
+    <a href="/logout">
+        Log Out
+    </a>
+    </li>
+</ul>
+
     <center>
         <h1 style="padding-top: 25px; ">
-            Edit
+            Edit Booking for Booking with ID {{ booking.id }}
         </h1>
     </center>
     <form method="post" action="" class="inline-form" style="background-color: white;opacity: 69%">
@@ -23,7 +53,7 @@
 <center>
      <center>
         <h1 style="padding-top: 25px; ">
-            you sure you want to cancel booking
+            you sure you want to cancel booking for Booking with ID {{ booking.id }}
         </h1>
     </center>
     <form method="post" action="/delete/{{ booking.id }}/" class="inline-form" style="background-color: white;opacity: 69%">
@@ -32,10 +62,5 @@
 
         <input type="submit" name="Conform" >
     </form>
-    <div>
-    <a href="/logout">
-    <button class="btn btn-outline-info">Log Out</button>
-    </a>
-    </div>
 </center>
 </body>
